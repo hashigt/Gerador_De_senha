@@ -1,3 +1,4 @@
+/* Regras gerais para todos os elementos, resetando margens e preenchimentos */
 * {
     font-family: "Monteserrat", sans-serif;
     padding: 0;
@@ -6,22 +7,25 @@
     color: #333;
 }
 
+/* Garante que o corpo e o HTML ocupem a altura total da tela */
 html,
-body{
+body {
     height: auto;
     min-height: 100vh;
 }
 
-html{
+/* Define um gradiente de fundo para o HTML */
+html {
     background: linear-gradient(180deg, #2bc0e4 0%, #eaecc6 100%);
 }
 
-
-input:focus{
+/* Remove o contorno azul em inputs focados */
+input:focus {
     outline: none;
 }
 
-#register-container{
+/* Container principal com sombra e flexbox */
+#register-container {
     max-width: 900px;
     min-height: 80vh;
     margin: 2rem auto;
@@ -30,6 +34,7 @@ input:focus{
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
+/* Banner de imagem lateral com imagem de fundo */
 #register-banner {
     background: url('../img/senhaforte_capa-min.webp');
     background-size: cover;
@@ -37,7 +42,8 @@ input:focus{
     width: 50%;
 }
 
-#banner-camada{
+/* Camada escura por cima da imagem para melhor contraste do texto */
+#banner-camada {
     background-color: rgba(0, 70, 90, 0.7);
     height: 100%;
     padding: 2rem;
@@ -45,13 +51,15 @@ input:focus{
     align-items: center;
 }
 
-#register-banner h1{
+/* Estilização do título no banner */
+#register-banner h1 {
     font-size: 4rem;
     margin-bottom: 1.5rem;
     color: #fff;
     word-spacing: 50rem;
 }
 
+/* Formulário de registro */
 #register-form {
     background-color: #fdfdfd;
     padding: 2rem;
@@ -60,12 +68,14 @@ input:focus{
     flex-direction: column;
 }
 
+/* Estilização do título do formulário */
 #register-form h2 {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 2.2rem;
 }
 
+/* Estilização do parágrafo de instrução */
 #register-form p {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -73,33 +83,38 @@ input:focus{
     font-size: 0.8rem;
 }
 
+/* Estilização dos containers de cada campo do formulário */
 .form-control {
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-.form-control label{
+/* Estilização das labels */
+.form-control label {
     font-weight: bold;
     margin-bottom: .6rem;
 }
 
-.form-control input{
+/* Estilização dos inputs, removendo bordas e deixando apenas a inferior */
+.form-control input {
     border: none;
     border-bottom: 1px solid #aaa;
     pad: .6rem 0;
 }
 
-#generate-password {
+/* Estilização do link para abrir o gerador de senha */
+#open-generate-password {
     font-weight: bold;
     cursor: pointer;
     transition: 0.4s;
 }
 
-#generate-password:hover{
+#open-generate-password:hover {
     color: #0099ff;
 }
 
+/* Container para a senha gerada, inicialmente oculto e estilizado para aparecer */
 #register-form #generated-password {
     border: 1px solid #0099ff;
     border-radius: 4px;
@@ -112,12 +127,16 @@ input:focus{
     display: none;
 }
 
-#register-form #generated-password p{
+/* Estilização do parágrafo dentro do container de senha */
+#register-form #generated-password p {
     color: #67c5e2;
     margin-bottom: 0.5rem;
 }
 
-#register-form input[type="submit"] {
+/* Estilização de botões e input de submit */
+#register-form input[type="submit"],
+#generate-options button,
+#copy-password {
     background-color: #67c5e2;
     color: #fff;
     opacity: .8;
@@ -130,6 +149,54 @@ input:focus{
     transition: 0.4s;
 }
 
+/* Efeito de hover no botão de submit */
 #register-form input[type="submit"]:hover {
     opacity: 1;
+}
+
+/* Estilização do container de opções do gerador de senha */
+#generate-options {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+/* Altera a direção dos elementos dentro do form-control no gerador */
+#generate-options .form-control {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilização das labels no gerador */
+#generate-options label {
+    font-size: .8rem;
+}
+
+/* Estilização do input de texto para o comprimento da senha */
+#generate-options input[type="text"] {
+    max-width: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Estilização do botão 'Criar senha' */
+#generate-options button {
+    background-color: #42a8c7;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilização do botão 'Copiar' */
+#copy-password {
+    margin: 1rem auto;
+    background-color: transparent;
+    border: 2px solid #81d340;
+    color: #81d340;
+    padding: 0.5rem 1rem;
+}
+
+/* Classe para ocultar elementos */
+.hide {
+    display: none;
 }
