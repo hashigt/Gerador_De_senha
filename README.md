@@ -1,4 +1,4 @@
-# Gerador de Senhas
+# 🔒Gerador de Senhas
 
 ## Visão Geral
 
